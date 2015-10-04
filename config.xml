@@ -4,16 +4,17 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id = "com.ec.mitaxijj.user"
-        version = "1.0.2">
+        versionCode = "1"
+        version = "1.0.1">
 
-    <name>Mi Taxi JJ</name>
+    <name>Usuario</name>
 
     <description>
         Cooperativa JJ presenta su aplicación para solicitar servicio de taxi en Quito - Ecuador, fácil, rápido, eficente y seguro. by Geocommerce Cia. Ltda. Quito, Ecuador - 2014
     </description>
 
-    <author href="http://www.geocommerce.com.ec" email="diego_ramirez_romero@hotmail.com">
-        Geocommerce Cia. Ltda. Quito, Ecuador - 2014
+    <author href="http://www.geocommerce.com.ec" email="geo@geocommerce.com.ec">
+        Geocommerce
     </author>
 
     <!--
@@ -33,7 +34,7 @@ permission on your app, which PhoneGap requires.
     <preference name="permissions" value="none"/>
 
     <!-- Customize your app and platform with the preference element. -->
-    <preference name="phonegap-version" value="3.5.0" /> <!-- all: current version of PhoneGap -->
+    <preference name="phonegap-version" value="3.7.0" /> <!-- all: current version of PhoneGap -->
     <preference name="orientation" value="portrait" /> <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device" value="universal" /> <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen" value="true" /> <!-- all: hides the status bar at the top of the screen -->
