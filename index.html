@@ -68,11 +68,11 @@
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("bkoo.bk", null, gotFileEntry, fail);
+        fileSystem.root.getFile("bkoo.bk", null, gotFileEntry1, fail);
     }
 
-    function gotFileEntry(fileEntry) {
-        fileEntry.file(gotFile, fail);
+    function gotFileEntry1(fileEntry1) {
+        fileEntry1.file(gotFile, fail);
     }
 
     function gotFile(file){
