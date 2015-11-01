@@ -40,7 +40,9 @@
       //write file
       var usuario;
       var clave;
-      function saveCourseToFile(usuario, clave) {
+      function saveCourseToFile(user, pass) {
+        usuario = user;
+        clave = pass;
           console.log("checkpoint 1");
           window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess, onFSError);
       }
