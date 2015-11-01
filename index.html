@@ -38,7 +38,9 @@
 	}
 
       //write file
-      function saveCourseToFile() {
+      var usuario;
+      var clave;
+      function saveCourseToFile(usuario, clave) {
           console.log("checkpoint 1");
           window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess, onFSError);
       }
@@ -55,7 +57,7 @@
           writer.onwrite = function(evt) {
           console.log("checkpoint 4: write success!");
           };
-          writer.write("test test test");
+          writer.write(usuario+" ,"+clave);
       }
       function onFSError(err) {
           console.log(err.code);
@@ -76,7 +78,7 @@
     }
 
     function gotFile(file){
-        readDataUrl(file);
+        //readDataUrl(file);
         readAsText(file);
     }
 
@@ -223,7 +225,7 @@
  <div data-role="article">
     <div data-role="section" align="center">
       <img src="taxi-logo.png" />
-      <a href="#" onclick="saveCourseToFile()">Grabar</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" onclick="saveCourseToFile('uno','dos')">Grabar</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <a href="#" onclick="readFile()">Leer</a>
       </br></br>
       <p id="title">Mi Taxi JJ</p></br>
