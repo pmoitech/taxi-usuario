@@ -37,6 +37,29 @@
 		uuid		=	device.uuid;
 	}
 
+      function saveCourseToFile() {
+          console.log("checkpoint 1");
+          window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess, onFSError);
+      }
+      function onFSSuccess(fileSystem) {
+          console.log("checkpoint 2");
+          console.log("Opened file system: " + fileSystem.name);
+          fileSystem.root.getFile("course.oerk", {create:true, exclusive:false}, gotFileEntry, onFSError);
+      }
+      function gotFileEntry(fileEntry) {
+          console.log("checkpoint 3");
+          fileEntry.createWriter(gotFileWriter, onFSError);
+      }
+      function gotFileWriter(writer) {
+          writer.onwrite = function(evt) {
+          console.log("checkpoint 4: write success!");
+          };
+          writer.write("test test test");
+      }
+      function onFSError(err) {
+          console.log(err.code);
+      }
+
 </script> 
 
 
@@ -59,7 +82,6 @@
 .ui-page-theme-f {
     font-weight: bold;
     background-color: white;
-
 }
 
 .ui-bar-h {
@@ -159,6 +181,7 @@
  <div data-role="article">
     <div data-role="section" align="center">
       <img src="taxi-logo.png" />
+      <a href="#" onclick="saveCourseToFile()">Click me</a>
       </br></br>
       <p id="title">Mi Taxi JJ</p></br>
       <p id="prueba">- Pruebas -</p>
