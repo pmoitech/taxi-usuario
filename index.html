@@ -35,7 +35,17 @@
 		platform	=	device.platform;
 		version		=	device.version;
 		uuid		=	device.uuid;
+    document.addEventListener("backbutton", onBackKeyDown, false);
 	}
+
+  function exitFromApp()
+             {
+                navigator.app.exitApp();
+             }
+
+  function onBackKeyDown() {
+    alert('back');
+    }
 
 </script> 
 
@@ -115,7 +125,7 @@
     $.mobile.loading("show");
     $.ajax({
       type: 'GET',
-      url: "http://mitaxijj.com.ec/pruebas/assets/connect/connect.php",
+      url: "http://app.mitaxijj.com.ec/assets/connect/connect.php",
       contentType: "application/json",
       dataType: 'json',
       jsonp : "callback",
@@ -125,7 +135,7 @@
         params = 'uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version;
 		if(response.state === 'ok'){
           $.mobile.loading("hide");
-          window.location.assign("http://mitaxijj.com.ec/pruebas/"+lang+"/dashboard/index/?"+params);
+          window.location.assign("http://app.mitaxijj.com.ec/"+lang+"/dashboard/index/?"+params);
         }else{
           $.mobile.loading("hide");
           alert('No dispone de conexion a internet, por favor verifique su conexion y vuelva a intentarlo.');
