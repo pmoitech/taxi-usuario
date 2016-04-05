@@ -134,6 +134,7 @@
       }).done(function(response){
         params = 'uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version;
 		if(response.state === 'ok'){
+        alert('ok');
           $.mobile.loading("hide");
           window.location.assign("http://app.mitaxijj.com.ec/"+lang+"/dashboard/index/?"+params);
         }else{
