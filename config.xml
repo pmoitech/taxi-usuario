@@ -35,7 +35,7 @@ permission on your app, which PhoneGap requires.
 
     <!-- Customize your app and platform with the preference element. -->
     <platform name="android">
-        <preference name="phonegap-version" value="3.8.0" /> <!-- all: current version of PhoneGap -->
+        <preference name="phonegap-version" value="cli-5.1.1" /> <!-- all: current version of PhoneGap -->
     </platform>
     <preference name="orientation" value="portrait" /> <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device" value="universal" /> <!-- all: possible values handset, tablet, or universal -->
