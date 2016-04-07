@@ -1,16 +1,37 @@
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ec.mitaxijj.user" version="1.0.0" versionCode= "15" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id = "com.ec.mitaxijj.user"
+        versionCode = "15"
+        version = "1.0.0">
+
     <name>Usuario</name>
-<description>
+
+    <description>
         Cooperativa JJ presenta su aplicación para solicitar servicio de taxi en Quito - Ecuador, fácil, rápido, eficente y seguro. by Geocommerce Cia. Ltda. Quito, Ecuador - 2016
     </description>
-<author href="http://www.geocommerce.com.ec" email="geo@geocommerce.com.ec">
+
+    <author href="http://www.geocommerce.com.ec" email="geo@geocommerce.com.ec">
         Geocommerce
     </author>
-<content src="index.html" />
 
-<preference name='phonegap-version' value='cli-5.1.1' />
+    <!--
+Enable individual API permissions here.
+The "device" permission is required for the 'deviceready' event.
+-->
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    <feature name="http://api.phonegap.com/1.0/device" />
 
+
+    <!--
+If you do not want any permissions to be added to your app, add the
+following tag to your config.xml; you will still have the INTERNET
+permission on your app, which PhoneGap requires.
+-->
+    <preference name="permissions" value="none"/>
 
     <!-- Customize your app and platform with the preference element. -->
     <preference name="phonegap-version" value="cli-5.1.1" /> <!-- all: current version of PhoneGap -->
@@ -30,7 +51,7 @@
     <preference name="android-installLocation" value="auto" /> <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 
     <!-- Plugins can also be added here. -->
-    <plugin name="org.apache.cordova.device" spec="0.3.0" source="pgb" />
+    <gap:plugin name="org.apache.cordova.device" />
     <!--
 <gap:plugin name="Example" />
 A list of available plugins are available at https://build.phonegap.com/docs/plugins
