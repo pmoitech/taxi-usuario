@@ -93,12 +93,15 @@
 	var version;
 	var uuid;
 
+
+  function onLoad() {
   var deviceInfo = cordova.require("cordova/plugin/DeviceInformation");
   deviceInfo.get(function(result) {
         alert("result = " + result);
     }, function() {
         alert("error");
     });
+  }
 
   /*
 
