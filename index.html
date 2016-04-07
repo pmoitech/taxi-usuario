@@ -15,7 +15,7 @@
   
     <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css" />
 
-    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="deviceinformation.js"></script>
 
 <style>
@@ -94,16 +94,7 @@
 	var uuid;
 
 
-  function connect() {
-  var deviceInfo = cordova.require("cordova/plugin/DeviceInformation");
-  deviceInfo.get(function(result) {
-        alert("result = " + result);
-    }, function() {
-        alert("error");
-    });
-  }
 
-  /*
 
 	function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false); 
