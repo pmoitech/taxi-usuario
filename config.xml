@@ -26,7 +26,7 @@ The "device" permission is required for the 'deviceready' event.
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="Insomnia">
-        <param name="android-package" value="nl.xservices.plugins.Insomnia" />
+         <param name="android-package" value="nl.xservices.plugins.Insomnia" />
     </feature>
 
 
