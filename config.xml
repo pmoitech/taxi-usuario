@@ -27,6 +27,9 @@ The "device" permission is required for the 'deviceready' event.
     <feature name="http://api.phonegap.com/1.0/device" />
 
 
+
+
+
     <!--
 If you do not want any permissions to be added to your app, add the
 following tag to your config.xml; you will still have the INTERNET
@@ -34,8 +37,11 @@ permission on your app, which PhoneGap requires.
 -->
     <preference name="permissions" value="none"/>
 
+    
+
+
     <!-- Customize your app and platform with the preference element. -->
-    <preference name="phonegap-version" value="cli-5.2.0" /> <!-- all: current version of PhoneGap -->
+    <preference name="phonegap-version" value="cli-5.1.1" /> <!-- all: current version of PhoneGap -->
     <preference name="orientation" value="portrait" /> <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device" value="universal" /> <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen" value="true" /> <!-- all: hides the status bar at the top of the screen -->
@@ -52,7 +58,15 @@ permission on your app, which PhoneGap requires.
     <preference name="android-installLocation" value="auto" /> <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 
     <!-- Plugins can also be added here. -->
-    <plugin name="cordova-plugin-device" />
+    <gap:plugin name="cordova-plugin-whitelist" version="1.0.0" source = "npm"/>
+    <gap:plugin name="cordova-plugin-console" version="1.0.1" source = "npm"/>
+    <gap:plugin name="cordova-plugin-device-orientation" version="1.0.1" source = "npm"/> 
+    <gap:plugin name="cordova-plugin-globalization" version="1.0.1" source = "npm"/>
+    <gap:plugin name="cordova-plugin-inappbrowser" version="1.0.1" source = "npm"/> 
+    <gap:plugin name="cordova-plugin-network-information" version="1.0.1" source = "npm"/>
+    <gap:plugin name="cordova-plugin-device" version="1.0.1" source = "npm"/>
+    <gap:plugin name="cordova-plugin-file-transfer" source="npm" version="1.3.0 " />
+
     <!--
 <gap:plugin name="Example" />
 A list of available plugins are available at https://build.phonegap.com/docs/plugins
