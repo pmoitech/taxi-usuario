@@ -65,7 +65,7 @@ permission on your app, which PhoneGap requires.
     <gap:plugin name="cordova-plugin-device" version="1.0.1" source = "npm"/>
     <gap:plugin name="cordova-plugin-file-transfer" source="npm" version="1.3.0 " />
 
-    <gap:plugin name="nl.x-services.plugins.insomnia" version="4.0.0" />
+    <gap:plugin name="nl.x-services.plugins.insomnia"/>
 
     <!-- Allow links to example.com -->
     <allow-navigation href="http://mitaxijj.com/*" />
