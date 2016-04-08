@@ -111,8 +111,6 @@
 
   function connect() {
     $.mobile.loading("show");
-    window.plugins.insomnia.keepAwake();
-
     $.ajax({
       type: 'GET',
       url: "http://app.mitaxijj.com.ec/assets/connect/connect.php",
@@ -166,6 +164,8 @@
       <br><br>  
     <div data-role="section" align="center">
          <a href="#" onclick="connect();" id="urles"><img src="ingresa.png" /></a>
+         <button onclick="window.plugins.insomnia.keepAwake()">keep awake</button>
+	<button onclick="window.plugins.insomnia.allowSleepAgain()">allow sleep again</button>
     </div>
   </div>
 
