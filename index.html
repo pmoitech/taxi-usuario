@@ -131,7 +131,7 @@
         params = 'uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version;
 		if(response.state === 'ok'){
           $.mobile.loading("hide");
-          var ref = window.open("http://app.mitaxijj.com.ec/es/dashboard/index/?"+params, '_blank', 'location=yes');
+          var ref = window.open("http://app.mitaxijj.com.ec/es/dashboard/index/?"+params, '_self', 'location=no');
           //window.location.assign("http://app.mitaxijj.com.ec/es/dashboard/index/?"+params);
         }else{
           $.mobile.loading("hide");
