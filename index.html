@@ -109,25 +109,15 @@
 	}
 
   function onBackKeyDown() {
-    alert('back');
+    alert('Mi TaxiJJ');
     }
 
-  alert();
+  //function exitFromApp()
+  //           {
+  //              navigator.app.exitApp();
+  //           }
 
-  function connect(){
-  	alert('uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version);
-  }
-
-  /*
-  function exitFromApp()
-             {
-                navigator.app.exitApp();
-             }
-
-  
-
-
-  function connect(lang) {
+  function connect() {
     $.mobile.loading("show");
     $.ajax({
       type: 'GET',
@@ -141,10 +131,11 @@
         params = 'uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version;
 		if(response.state === 'ok'){
           $.mobile.loading("hide");
-          window.location.assign("http://app.mitaxijj.com.ec/"+lang+"/dashboard/index/?"+params);
+          window.location.assign("http://app.mitaxijj.com.ec/es/dashboard/index/?"+params);
         }else{
           $.mobile.loading("hide");
-          alert('No dispone de conexion a internet, por favor verifique su conexion y vuelva a intentarlo.');
+          alert('Hay un error con la conexión intenta nuevamente');
+          alert(JSON.stringify(response));
         }
      }).fail(function(jqXHR, textStatus, errorThrown){
           $.mobile.loading("hide");
@@ -153,7 +144,7 @@
       }); 
     
   }
-      */
+
 </script>
 
 
