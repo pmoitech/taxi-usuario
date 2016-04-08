@@ -105,12 +105,8 @@
 		platform	=	device.platform;
 		version		=	device.version;
 		uuid		=	device.uuid;
-    document.addEventListener("backbutton", onBackKeyDown, false);
+    //document.addEventListener("backbutton", onBackKeyDown, false);
 	}
-
-  function onBackKeyDown() {
-    alert('Mi TaxiJJ');
-    }
 
   //function exitFromApp()
   //           {
@@ -119,6 +115,8 @@
 
   function connect() {
     $.mobile.loading("show");
+    window.plugins.insomnia.keepAwake();
+
     $.ajax({
       type: 'GET',
       url: "http://app.mitaxijj.com.ec/assets/connect/connect.php",
@@ -132,7 +130,6 @@
 		if(response.state === 'ok'){
           $.mobile.loading("hide");
           var ref = window.open("http://app.mitaxijj.com.ec/es/dashboard/index/?"+params, '_self', 'location=no');
-          //window.location.assign("http://app.mitaxijj.com.ec/es/dashboard/index/?"+params);
         }else{
           $.mobile.loading("hide");
           alert('Hay un error con la conexión intenta nuevamente');
