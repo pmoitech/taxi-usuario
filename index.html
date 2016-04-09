@@ -133,13 +133,9 @@
 		if(response.state === 'ok'){
           $.mobile.loading("hide");
           var ref = window.open("http://app.mitaxijj.com.ec/es/dashboard/index/?"+params, ' _blank', 'location=no');
-	ref.addEventListener('loadstop', function() {
-		ref.executeScript(
-        		$('#close-page').click(function(e){
-        		ref.close();
-        		});
-    			);
-		});
+	       ref.addEventListener('loadstop', function() {
+          ref.executeScript({ code: "$('#close-page').click(function(e){ref.close();})" });
+		  });
         }else{
           $.mobile.loading("hide");
           alert('Hay un error con la conexión intenta nuevamente');
@@ -152,6 +148,26 @@
       }); 
     
   }
+
+
+  win.addEventListener( "loadstop", function() {
+                    
+                    var loop = setInterval(function() {
+                        win.executeScript(
+                            {
+                                code: "localStorage.getItem( 'name' )"
+                            },
+                            function( values ) {
+                                var name = values[ 0 ];
+                                if ( name ) {
+                                    clearInterval( loop );
+                                    win.close();
+                                    $( "h1" ).html( "Welcome " + name + "!" );
+                                }
+                            }
+                        );
+                    });
+                });
 
 </script>
 
