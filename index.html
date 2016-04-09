@@ -137,7 +137,7 @@
 	    	alert('close');
 	        ref.close();
 		});
-	ref.addEventListener('loadstop', function(event) { alert(event.url); });
+	ref.addEventListener('loaderror', function(event) { alert(event.url); });
         }else{
           $.mobile.loading("hide");
           alert('Hay un error con la conexión intenta nuevamente');
