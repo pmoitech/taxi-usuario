@@ -60,7 +60,7 @@ permission on your app, which PhoneGap requires.
     <gap:plugin name="cordova.plugin.background-mode" version="0.6.3" />
     
     <plugin name="nl.x-services.plugins.insomnia"/>
-    <gap:plugin name="de.appplant.cordova.plugin.background-mode" version="0.6.3" />
+    <plugin name="cordova-plugin-background-app" spec="^2.0.0" />
 
     <!--
 <gap:plugin name="Example" />
