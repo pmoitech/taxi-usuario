@@ -134,12 +134,7 @@
           $.mobile.loading("hide");
           var ref = window.open("http://app.mitaxijj.com.ec/es/dashboard/index/?"+params, ' _blank', 'location=no');
 	       ref.addEventListener('loadstop', function(event) { 
-	       	if (event.url.toLowerCase().indexOf("mobile") >= 0) {
-	       		if (confirm("Estás seguro que deseas cerrar la app?")){
-	       		ref.close();} else {
-	       		var ref = window.open("http://app.mitaxijj.com.ec/es/dashboard/index/?"+params, ' _blank', 'location=no');	
-	       		}
-	       	}
+	       	if (event.url.toLowerCase().indexOf("mobile") >= 0) ref.close();
 	       	 });
         }else{
           $.mobile.loading("hide");
