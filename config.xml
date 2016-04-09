@@ -57,8 +57,8 @@ permission on your app, which PhoneGap requires.
     <gap:plugin name="cordova-plugin-inappbrowser" version="1.0.1" source = "npm"/> 
     <gap:plugin name="cordova-plugin-network-information" version="1.0.1" source = "npm"/>
     <gap:plugin name="cordova-plugin-device" version="1.0.1" source = "npm"/>
-    <gap:plugin name="cordova-plugin-file-transfer" source="npm" version="1.3.0 " />
-
+    <gap:plugin name="de.appplant.cordova.plugin.background-mode" version="0.6.3" />
+    
     <plugin name="nl.x-services.plugins.insomnia"/>
 
     <!--
