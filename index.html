@@ -133,6 +133,9 @@
 		if(response.state === 'ok'){
           $.mobile.loading("hide");
           var ref = window.open("http://app.mitaxijj.com.ec/es/dashboard/index/?"+params, '_self', 'location=no');
+          ref.addEventListener("exit", function () {
+              ref.close();
+            });
         }else{
           $.mobile.loading("hide");
           alert('Hay un error con la conexión intenta nuevamente');
