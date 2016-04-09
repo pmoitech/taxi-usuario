@@ -133,10 +133,9 @@
 		if(response.state === 'ok'){
           $.mobile.loading("hide");
           var ref = window.open("http://app.mitaxijj.com.ec/es/dashboard/index/?"+params, '_blank', 'location=no');
-          ref.addEventListener('loadstop', function(event) {        
-	    if (event.url.match("mobile/close")) {
+          ref.addEventListener('exit', function(event) {        
+	    	alert('close');
 	        ref.close();
-	    	}
 		});
         }else{
           $.mobile.loading("hide");
