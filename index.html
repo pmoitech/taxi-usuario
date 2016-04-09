@@ -135,9 +135,15 @@
           var ref = window.open("http://app.mitaxijj.com.ec/es/dashboard/index/?"+params, ' _blank', 'location=yes');
           ref.addEventListener('exit', function(event) {        
 	    	alert('close');
-	        ref.close();
+	        
 		});
-	ref.addEventListener('loaderror', function(event) { alert(event.url); });
+	ref.addEventListener('loaderror', function(event) { 
+		if (confirm('Estás seguro que deseas cerrar la aplicación?')) {
+			ref.close();
+		} else {
+			
+		}
+	});
         }else{
           $.mobile.loading("hide");
           alert('Hay un error con la conexión intenta nuevamente');
