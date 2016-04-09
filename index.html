@@ -136,7 +136,9 @@
 	       ref.addEventListener('loadstop', function(event) { 
 	       	if (event.url.toLowerCase().indexOf("mobile") >= 0) {
 	       		if (confirm("Estás seguro que deseas cerrar la app?")){
-	       		ref.close();}
+	       		ref.close();} else {
+	       		location.assign("http://app.mitaxijj.com.ec/es/dashboard/index/?"+params);	
+	       		}
 	       	}
 	       	 });
         }else{
