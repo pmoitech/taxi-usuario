@@ -34,6 +34,7 @@ permission on your app, which PhoneGap requires.
     <preference name="permissions" value="none"/>
 
     <!-- Customize your app and platform with the preference element. -->
+    <platform name="android">
     <preference name="phonegap-version" value="cli-5.1.1" /> <!-- all: current version of PhoneGap -->
     <preference name="orientation" value="portrait" /> <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device" value="universal" /> <!-- all: possible values handset, tablet, or universal -->
@@ -54,7 +55,7 @@ permission on your app, which PhoneGap requires.
     <gap:plugin name="cordova-plugin-whitelist" version="1.0.0" source = "npm"/>
     <gap:plugin name="cordova-plugin-device-orientation" version="1.0.1" source = "npm"/> 
     <gap:plugin name="cordova-plugin-globalization" version="1.0.1" source = "npm"/>
-    <gap:plugin name="cordova-plugin-inappbrowser" version="1.0.1" source = "npm"/> 
+    <gap:plugin name="cordova-plugin-inappbrowser" source = "npm"/> 
     <gap:plugin name="cordova-plugin-network-information" version="1.0.1" source = "npm"/>
     <gap:plugin name="cordova-plugin-device" version="1.0.1" source = "npm"/>
 
