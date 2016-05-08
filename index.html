@@ -109,7 +109,6 @@
 	}
 
   function connect() {
-  	alert('ok');
     $.mobile.loading("show");
     $.ajax({
       type: 'GET',
@@ -120,6 +119,7 @@
       jsonpCallback: 'jsonpCallback',
       data : {cachehora : (new Date()).getTime()},
       }).done(function(response){
+      	alert('ok');
         params = 'uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version;
 		if(response.state === 'ok'){
           $.mobile.loading("hide");
