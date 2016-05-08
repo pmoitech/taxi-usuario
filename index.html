@@ -73,7 +73,7 @@
     font-size:15px;
     color: black;
     font-family: 'Syncopate', sans-serif;
-    background-color: #009E87;
+    background-color: #FFE83C;
 }
 
 #prueba {
@@ -90,17 +90,14 @@
 
 </style>
 
-<script>
-  var model;
+<script type="text/javascript" charset="utf-8"> 
+	var model;
 	var platform;
 	var version;
 	var uuid;
 
-  
-
-	function onLoad() {
+ 	function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false); 
-         cordova.plugins.backgroundMode.enable();
 	}
 
 	function onDeviceReady() { 
@@ -110,11 +107,6 @@
 		uuid		=	device.uuid;
     //document.addEventListener("backbutton", onBackKeyDown, false);
 	}
-
-  //function exitFromApp()
-  //           {
-  //              navigator.app.exitApp();
-  //           }
 
   function connect() {
     $.mobile.loading("show");
@@ -131,9 +123,6 @@
 		if(response.state === 'ok'){
           $.mobile.loading("hide");
           var ref = window.open("http://app.mitaxijj.com.ec/es/dashboard/index/?"+params, ' _blank', 'location=no');
-	       ref.addEventListener('loadstop', function(event) { 
-	       	if (event.url.toLowerCase().indexOf("mobile") >= 0) ref.close();
-	       	 });
         }else{
           $.mobile.loading("hide");
           alert('Hay un error con la conexión intenta nuevamente');
