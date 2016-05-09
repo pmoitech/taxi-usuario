@@ -5,13 +5,13 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:cdv ="http://cordova.apache.org/ns/1.0"
         id = "com.ec.mitaxijj.user"
-        versionCode = "15"
-        version = "1.0.1"> 
+        versionCode = "16" 
+        version = "1.0.2"> 
 
-    <name>Usuario</name>
+    <name>Agente</name>
 
     <description>
-        Cooperativa JJ presenta su aplicación para solicitar servicio de taxi en Quito - Ecuador, fácil, rápido, eficente y seguro. by Geocommerce Cia. Ltda. Quito, Ecuador - 2016
+        GeoCommerce/Cooperativa JJ presentan su aplicación para solicitar servicio de taxi en Quito - Ecuador, fácil, rápido, eficente y seguro. by Geocommerce Cia. Ltda. Quito, Ecuador - 2016
     </description>
 
     <author href="http://www.geocommerce.com.ec" email="geo@geocommerce.com.ec">
@@ -56,10 +56,12 @@ permission on your app, which PhoneGap requires.
     <gap:plugin name="cordova-plugin-device-orientation" version="1.0.1" source = "npm"/> 
     <gap:plugin name="cordova-plugin-globalization" version="1.0.1" source = "npm"/>
     <gap:plugin name="cordova-plugin-inappbrowser" source = "npm"/> 
+    <!--gap:plugin name="cordova-plugin-inappbrowser" version="1.0.1" source = "npm"/--> 
     <gap:plugin name="cordova-plugin-network-information" version="1.0.1" source = "npm"/>
     <gap:plugin name="cordova-plugin-device" version="1.0.1" source = "npm"/>
 
-    <plugin name="nl.x-services.plugins.insomnia"/>
+    <!--plugin name="nl.x-services.plugins.insomnia"/-->
+    <plugin name="cordova-plugin-insomnia" />
 
     <!--
 <gap:plugin name="Example" />
