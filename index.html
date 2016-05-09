@@ -9,19 +9,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=9">
  
-    <script src="jquery-1.12.3.js"></script>
-    <script src="jquery.mobile-1.4.5.min.js"></script>
+    <script src="jquery-1.10.2.min.js"></script>
+    <script src="jquery.mobile-1.3.2.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Syncopate:700' rel='stylesheet' type='text/css'>
   
-    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="jquery.mobile-1.3.2.min.css" />
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+
+<script type="text/javascript" charset="utf-8"> 
+  var model;
+  var platform;
+  var version;
+  var uuid;
+
+  function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false); 
+    }
+
+  function onDeviceReady() { 
+    model   = device.model;
+    platform  = device.platform;
+    version   = device.version;
+    uuid    = device.uuid;
+  }
+  
+  function connect() {
+    $.mobile.loading("show");
+    $.ajax({
+      type: 'GET',
+      url: "http://app.mitaxijj.com.ec/assets/connect/connect.php",
+      contentType: "application/json",
+      dataType: 'json',
+      jsonp : "callback",
+      jsonpCallback: 'jsonpCallback',
+      data : {cachehora : (new Date()).getTime()},
+      }).done(function(response){
+	    params = 'uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version;
+        if(response.state === 'ok'){
+          $.mobile.loading("hide");
+          var ref = window.open("http://app.mitaxijj.com.ec/dashboard/index/?"+params, ' _blank', 'location=no');
+          /*ref.addEventListener('loadstop', function(event) { alert(event.url); });
+          ref.addEventListener('loadstart', function() {
+	    	ref.executeScript({code: "window.plugins.insomnia.keepAwake();"});
+	  });
+	  ref.addEventListener('loadstop', function() {
+	    	ref.executeScript({code: "window.plugins.insomnia.keepAwake();"});
+	  });
+	  */
+        }else{
+          $.mobile.loading("hide");
+          alert('Hay un error con la conexión intenta nuevamente');
+        }
+     }).fail(function(jqXHR, textStatus, errorThrown){
+          $.mobile.loading("hide");
+          alert('No dispone de conexion a internet o el servidor no responde, por favor verifique su conexion y vuelva a intentarlo.');
+
+      }); 
+    
+  }
+
+</script> 
+
 
 <style>
 .ui-bar-f {
     font-weight: normal;
     color: black;
-    background-color: white;
+    background-color: yellow;
 }
 
 .ui-body-f {
@@ -84,88 +139,43 @@
     background-color: #FFE83C;
 }
 
-#principal {
-  background-color: #FFE83C;
-}
-
 </style>
 
-<script type="text/javascript" charset="utf-8"> 
-	var model;
-	var platform;
-	var version;
-	var uuid;
+<script language="JavaScript">
 
- 	function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false); 
-	}
-
-	function onDeviceReady() { 
-		model		=	device.model;
-		platform	=	device.platform;
-		version		=	device.version;
-		uuid		=	device.uuid;
-    //document.addEventListener("backbutton", onBackKeyDown, false);
-	}
-
-  function connect() {
-    $.mobile.loading("show");
-    $.ajax({
-      type: 'GET',
-      url: "http://app.mitaxijj.com.ec/assets/connect/connect.php",
-      contentType: "application/json",
-      dataType: 'json',
-      jsonp : "callback",
-      jsonpCallback: 'jsonpCallback',
-      data : {cachehora : (new Date()).getTime()},
-      }).done(function(response){
-        params = 'uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version;
-	if(response.state === 'ok'){
-          $.mobile.loading("hide");
-          var ref = window.open('http://google.com', '_blank', 'location=no');
-          //var ref = window.open("http://app.mitaxijj.com.ec/es/dashboard/index/?"+params, ' _blank', 'location=no');
-        }else{
-          $.mobile.loading("hide");
-          alert('Hay un error con la conexión intenta nuevamente');
-          //alert(JSON.stringify(response));
-        }
-     }).fail(function(jqXHR, textStatus, errorThrown){
-          $.mobile.loading("hide");
-          alert('No dispone de conexion a internet, por favor verifique su conexion y vuelva a intentarlo.');
-
-      }); 
-    
-  }
+ 
 </script>
 
 
 <title>Mi Taxi JJ</title>
 </head>   
 
- <body onload="onLoad()">
-		
+<body onload="onLoad()">
 
 <div data-role="page" id="principal" data-theme="f">
   <div data-theme="f" data-role="header" align="center">
-    <div>
-		
-	</div>
+    <div></div>
   </div>
  
   <br><br>
- <div data-role="article">
+  <div data-role="article">
     <div data-role="section" align="center">
       <img src="taxi-logo.png" />
       </br></br>
       <p id="title">Mi Taxi JJ</p></br>
-      <p id="prueba">Tu taxi...  seguro!</p>
+      <p id="prueba">Tu Taxi... seguro!</p>
     </div>
       <br><br>  
     <div data-role="section" align="center">
-         <a href="#" onclick="connect();" id="urles"><img src="ingresa.png" /></a>
+         <a href="#" onclick="connect('es');" id="urles"><img src="ingresa.png" /></a>
     </div>
   </div>
-
+  
+  <!--
+  <button onclick="window.plugins.insomnia.keepAwake()">keep awake</button>
+  <button onclick="window.plugins.insomnia.allowSleepAgain()">allow sleep again</button>
+  -->
+  
   <div id="pie" data-theme="h" data-role="footer" data-position="fixed" align="center">
         GeoCommerce
   </div>
