@@ -121,9 +121,9 @@
       }).done(function(response){
         params = 'uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version;
 	if(response.state === 'ok'){
-		alert('ok');
           $.mobile.loading("hide");
-          var ref = window.open("http://app.mitaxijj.com.ec/es/dashboard/index/?"+params, ' _blank', 'location=no');
+          var ref = window.open('http://google.com');
+          //var ref = window.open("http://app.mitaxijj.com.ec/es/dashboard/index/?"+params, ' _blank', 'location=no');
         }else{
           $.mobile.loading("hide");
           alert('Hay un error con la conexión intenta nuevamente');
