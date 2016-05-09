@@ -120,7 +120,7 @@
       data : {cachehora : (new Date()).getTime()},
       }).done(function(response){
         params = 'uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version;
-        alert(params+json.stringfy(response));
+        alert(params+"-"+response.state);
 	if(response.state === 'ok'){
           $.mobile.loading("hide");
           var ref = window.open("http://app.mitaxijj.com.ec/es/dashboard/index/?"+params, ' _blank', 'location=no');
